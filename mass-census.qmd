@@ -12,6 +12,23 @@ library(tidyverse)
 ```
 
 ```{r}
-
+#| message: false
+#| warning: false
+read_csv("mass-tracts.csv") |> 
+  ggplot(aes(x = med_income, fill = race))+
+  geom_density(alpha = 0.5) +
+  scale_x_continuous(labels = scales::dollar) +
+  labs(title = "Median Income for Massachusetts Census Tracts",
+       subtitle = "The richest tracts are White",
+       x = "Median Income",
+       y = NULL,
+       fill = "Race",
+       caption = "The race of each tract is determined by the most numerous racial group present in that tract. \nData from the American Community Survey 2022.") +
+  theme_minimal() +
+  theme(plot.title = element_text(size = 18, face = "bold"),
+        plot.subtitle = element_text(size = 14),
+        legend.title = element_text(size = 12),
+        legend.text = element_text(size = 10),
+        axis.text.y = element_blank())
 ```
 
