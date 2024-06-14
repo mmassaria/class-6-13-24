@@ -1,0 +1,17 @@
+---
+title: "Mass Census"
+author: "Michael Massaria"
+format: html
+execute: 
+  echo: false
+---
+
+```{r}
+#| message: false
+library(tidyverse)
+```
+
+```{r}
+
+```
+
